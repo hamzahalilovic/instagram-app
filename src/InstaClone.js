@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import { white } from "ansi-colors";
 
 class InstaClone extends Component {
   render() {
@@ -9,7 +8,19 @@ class InstaClone extends Component {
         <View style={styles.tempNav}>
           <Text>Instagram</Text>
         </View>
-        <View style={styles.userBar} />
+        <View style={styles.userBar}>
+          <View style={{ flexDirection: "row", alignItems:'center' }}>
+            <Image
+              style={{ width: 40, height: 40 }}
+              source={{
+                uri:
+                  "https://lh3.googleusercontent.com/RV_5eBXUVM_7Z0BnVMZWJneHkA9-BuOE3Qr8XewBGul7kndCKAEhKYNM-rMMu8p2Ux2dTKNm7NNNcE44vhgim52izQ=s1024"
+              }}
+            />
+            <Text>hamza_226</Text>
+          </View>
+          <View />
+        </View>
         <Image
           style={{ width: 100 + "%", height: 100 }}
           source={{
@@ -35,7 +46,9 @@ const styles = StyleSheet.create({
   userBar: {
     width: 100 + "%",
     height: 50,
-    backgroundColor: "rgb(255,255,255)"
+    backgroundColor: "rgb(255,255,255)",
+    flexDirection: "row",
+    
   }
 });
 

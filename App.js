@@ -1,24 +1,22 @@
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from "react";
+import { Platform, StyleSheet, Text, View } from "react-native";
+import InstaClone from "./src/InstaClone.js";
 
-export default class App extends Component{
-  render (){
+export default class App extends Component {
+  render() {
     return (
-      <View style={StyleSheet.container}>
-
-
+      <View style={styles.container}>
+        <InstaClone />
       </View>
     );
   }
-  
 }
 
 const styles = StyleSheet.create({
-  container :{
-    flex:1,
-    justifyContent: 'center',
-    alignItmes: 'center',
-    backgroundColor: '#F5FCFF',
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
   }
-
 });

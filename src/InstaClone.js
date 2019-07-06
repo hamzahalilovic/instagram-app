@@ -1,20 +1,28 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  TouchableOpacity
+} from "react-native";
+import config from "./config";
 
 class InstaClone extends Component {
   constructor() {
     super();
     this.state = {
       screenWidth: Dimensions.get("window").width
-      
     };
   }
   render() {
-    const imageHeight=Math.floor(this.state.screenWidth*1.1)
+    const imageHeight = Math.floor(this.state.screenWidth * 1.1);
     const imageUri =
-      "https://lh3.googleusercontent.com/7TWr-FqXcUX-_7NOmwoaptOek1CsMFtOeVnJ8EnNCql2WofYbUH4E9zSS2vazMnPMlJnfSO52a8NdpcT9Y7kDSt9=s1024"+"=s"+imageHeight+"-c";
-     
-  
+      "https://lh3.googleusercontent.com/7TWr-FqXcUX-_7NOmwoaptOek1CsMFtOeVnJ8EnNCql2WofYbUH4E9zSS2vazMnPMlJnfSO52a8NdpcT9Y7kDSt9=s1024" +
+      "=s" +
+      imageHeight +
+      "-c";
 
     return (
       <View style={{ flex: 1, height: 100 + "%", width: 100 + "%" }}>
@@ -39,12 +47,38 @@ class InstaClone extends Component {
           </View>
           <View />
         </View>
-        <Image
-          style={{ width: this.state.screenWidth, height:400 }}
-          source={{
-            uri: imageUri
+        <TouchableOpacity
+          onPress={() => {
+            alert("press");
           }}
-        />
+        >
+          <Image
+            style={{ width: this.state.screenWidth, height: 400 }}
+            source={{
+              uri: imageUri
+            }}
+          />
+        </TouchableOpacity>
+        <View style={styles.iconBar}>
+          <Image
+            style={[
+              styles.icon,
+              { height: 45, width: 45, tintColor: "rgb(252,61,57)" }
+            ]}
+            source={config.images.heartIcon}
+          />
+
+          <Image
+            style={[styles.icon, { height: 35, width: 35 }]}
+            source={config.images.bubbleIcon}
+          />
+
+          <Image
+            resizeMode="stretch"
+            style={[styles.icon, { height: 50, width: 40 }]}
+            source={config.images.arrowIcon}
+          />
+        </View>
       </View>
     );
   }
@@ -62,7 +96,7 @@ const styles = StyleSheet.create({
   },
   userBar: {
     width: 100 + "%",
-    height: 50,
+    height: config.sytleConstants.rowHeight,
     backgroundColor: "rgb(255,255,255)",
     flexDirection: "row",
     paddingHorizontal: 10,
@@ -73,6 +107,18 @@ const styles = StyleSheet.create({
     height: 40,
     width: 40,
     borderRadius: 20
+  },
+  iconBar: {
+    height: config.sytleConstants.rowHeight,
+    width: 100 + "%",
+    borderColor: "rgb(233,233,233)",
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  icon: {
+    marginLeft: 5
   }
 });
 

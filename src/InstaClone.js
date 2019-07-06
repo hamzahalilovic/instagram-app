@@ -1,31 +1,46 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
 
 class InstaClone extends Component {
+  constructor() {
+    super();
+    this.state = {
+      screenWidth: Dimensions.get("window").width
+      
+    };
+  }
   render() {
+    const imageUri =
+      "https://lh3.googleusercontent.com/SvFqoINN1eY88inEe8d7hvahc_SyG2tD0XMgkZ5D272CjEwj6l-NM3d4cfN0-wUV74XtRSz8lS3yZj7ncdh3gaVUeg=s1024";
+  
+
     return (
       <View style={{ flex: 1, height: 100 + "%", width: 100 + "%" }}>
         <View style={styles.tempNav}>
           <Text>Instagram</Text>
         </View>
         <View style={styles.userBar}>
-          <View style={{ flexDirection: "row", alignItems:'center' }}>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Image
-              style={{ width: 40, height: 40 }}
+              style={styles.userPic}
               source={{
                 uri:
                   "https://lh3.googleusercontent.com/RV_5eBXUVM_7Z0BnVMZWJneHkA9-BuOE3Qr8XewBGul7kndCKAEhKYNM-rMMu8p2Ux2dTKNm7NNNcE44vhgim52izQ=s1024"
               }}
             />
-            <Text>hamza_226</Text>
+            <Text style={{ marginLeft: 10 }}>hamza_226</Text>
+          </View>
+          <View>
+            <Text style={{ fontSize: 30, marginLeft: 90, paddingLeft: 80 }}>
+              ...
+            </Text>
           </View>
           <View />
         </View>
         <Image
-          style={{ width: 100 + "%", height: 100 }}
+          style={{ width: this.state.screenWidth, height:425 }}
           source={{
-            uri:
-              "https://lh3.googleusercontent.com/ENAxre2mHu54hGoy6TERJNab-OViceIoW6b_FQNbYcTZGOFP94WQBbs2b5zpyXN0VD-_GYTclx01YZL1MxNZCAmmiQ=s1024"
+            uri: imageUri
           }}
         />
       </View>
@@ -48,7 +63,14 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: "rgb(255,255,255)",
     flexDirection: "row",
-    
+    paddingHorizontal: 10,
+    justifyContent: "space-between"
+  },
+
+  userPic: {
+    height: 40,
+    width: 40,
+    borderRadius: 20
   }
 });
 

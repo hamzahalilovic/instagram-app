@@ -10,8 +10,10 @@ class InstaClone extends Component {
     };
   }
   render() {
+    const imageHeight=Math.floor(this.state.screenWidth*1.1)
     const imageUri =
-      "https://lh3.googleusercontent.com/SvFqoINN1eY88inEe8d7hvahc_SyG2tD0XMgkZ5D272CjEwj6l-NM3d4cfN0-wUV74XtRSz8lS3yZj7ncdh3gaVUeg=s1024";
+      "https://lh3.googleusercontent.com/7TWr-FqXcUX-_7NOmwoaptOek1CsMFtOeVnJ8EnNCql2WofYbUH4E9zSS2vazMnPMlJnfSO52a8NdpcT9Y7kDSt9=s1024"+"=s"+imageHeight+"-c";
+     
   
 
     return (
@@ -38,7 +40,7 @@ class InstaClone extends Component {
           <View />
         </View>
         <Image
-          style={{ width: this.state.screenWidth, height:425 }}
+          style={{ width: this.state.screenWidth, height:400 }}
           source={{
             uri: imageUri
           }}

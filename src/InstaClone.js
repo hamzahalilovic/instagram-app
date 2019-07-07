@@ -13,9 +13,17 @@ class InstaClone extends Component {
   constructor() {
     super();
     this.state = {
+      liked: false,
       screenWidth: Dimensions.get("window").width
     };
   }
+
+  likeToggled() {
+    this.setState({
+      liked: !this.state.liked
+    });
+  }
+
   render() {
     const imageHeight = Math.floor(this.state.screenWidth * 1.1);
     const imageUri =
@@ -23,6 +31,8 @@ class InstaClone extends Component {
       "=s" +
       imageHeight +
       "-c";
+
+    const heartIconColor = this.state.liked ? "rgb(252,61,57)" : null;
 
     return (
       <View style={{ flex: 1, height: 100 + "%", width: 100 + "%" }}>
@@ -48,8 +58,9 @@ class InstaClone extends Component {
           <View />
         </View>
         <TouchableOpacity
+          activeOpacity={0.7}
           onPress={() => {
-            alert("press");
+            this.likeToggled();
           }}
         >
           <Image
@@ -63,7 +74,7 @@ class InstaClone extends Component {
           <Image
             style={[
               styles.icon,
-              { height: 45, width: 45, tintColor: "rgb(252,61,57)" }
+              { height: 45, width: 45, tintColor: heartIconColor }
             ]}
             source={config.images.heartIcon}
           />
@@ -78,6 +89,13 @@ class InstaClone extends Component {
             style={[styles.icon, { height: 50, width: 40 }]}
             source={config.images.arrowIcon}
           />
+        </View>
+        <View style={styles.iconBar}>
+          <Image
+            style={[styles.icon, { height: 30, width: 30 }]}
+            source={config.images.heartIcon}
+          />
+          <Text>123 Likes</Text>
         </View>
       </View>
     );

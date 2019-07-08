@@ -4,7 +4,7 @@ export default {
         bubbleIcon: require("../../assets/bubble.png"),
         arrowIcon:require("../../assets/arrow.png")
     },
-    sytleConstants:{
+    styleConstants:{
         rowHeight:50
     }
 };

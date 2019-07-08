@@ -25,12 +25,8 @@ class InstaClone extends Component {
   }
 
   render() {
-    const imageHeight = Math.floor(this.state.screenWidth * 1.1);
     const imageUri =
-      "https://lh3.googleusercontent.com/7TWr-FqXcUX-_7NOmwoaptOek1CsMFtOeVnJ8EnNCql2WofYbUH4E9zSS2vazMnPMlJnfSO52a8NdpcT9Y7kDSt9=s1024" +
-      "=s" +
-      imageHeight +
-      "-c";
+      "https://lh3.googleusercontent.com/7TWr-FqXcUX-_7NOmwoaptOek1CsMFtOeVnJ8EnNCql2WofYbUH4E9zSS2vazMnPMlJnfSO52a8NdpcT9Y7kDSt9=s1024";
 
     const heartIconColor = this.state.liked ? "rgb(252,61,57)" : null;
 
@@ -114,7 +110,7 @@ const styles = StyleSheet.create({
   },
   userBar: {
     width: 100 + "%",
-    height: config.sytleConstants.rowHeight,
+    height: config.styleConstants.rowHeight,
     backgroundColor: "rgb(255,255,255)",
     flexDirection: "row",
     paddingHorizontal: 10,
@@ -127,7 +123,7 @@ const styles = StyleSheet.create({
     borderRadius: 20
   },
   iconBar: {
-    height: config.sytleConstants.rowHeight,
+    height: config.styleConstants.rowHeight,
     width: 100 + "%",
     borderColor: "rgb(233,233,233)",
     borderTopWidth: StyleSheet.hairlineWidth,

@@ -1,1 +1,1 @@
-# instagram-app
+# instagram-clone-app
